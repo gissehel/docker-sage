@@ -8,7 +8,7 @@ run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/ap
  apt-get update && \
  apt-get upgrade -y && \
  apt-get install -y build-essential ca-certificates m4 curl && \
- curl -Lso /tmp/sage-6.3.tar http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/sage-6.3.tar.gz && \
+ curl -Lso /tmp/sage-6.3.tar.gz http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/sage-6.3.tar.gz && \
  tar xvzf /tmp/sage-6.3.tar.gz && \
  cd sage-6.3 && make && \
  sage-6.3/sage -c 'quit()'
