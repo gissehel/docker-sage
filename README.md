@@ -2,7 +2,7 @@
 
 Docker container for Sage (http://sagemath.org).
 
-The `Dockerfile` builds Sage 5.12 from source.
+The `Dockerfile` builds Sage 6.3 from source.
 
 ## Notes
 
@@ -10,3 +10,4 @@ The `Dockerfile` builds Sage 5.12 from source.
   I recommend at least 1 GB of RAM on your VM.
 * The build takes a really long time, probably several hours.
 * The builds take a lot of disk space (several GB).
+
