@@ -12,6 +12,7 @@ run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/ap
  cd /home/sage/ && \
  sudo -u sage -H curl -Lso /tmp/sage-6.3.tar.gz http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/sage-6.3.tar.gz && \
  sudo -u sage -H tar xvzf /tmp/sage-6.3.tar.gz && \
+ rm -f /tmp/sage-6.3.tar.gz && \
  cd sage-6.3 && \
  sudo -u sage -H make && \
  sudo -u sage -H /home/sage/sage-6.3/sage -c 'quit()'
