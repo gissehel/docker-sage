@@ -2,7 +2,14 @@
 
 Docker container for Sage (http://sagemath.org).
 
+
 The `Dockerfile` builds Sage 6.3 from source.
+
+**project page**: [https://github.com/gissehel/docker-sagemath](https://github.com/gissehel/docker-sagemath)
+
+**registry page**: [https://registry.hub.docker.com/u/gissehel/sagemath/](https://registry.hub.docker.com/u/gissehel/sagemath/)
+
+**Note**: This build is not an automated build because sagemath takes too much time to compile, the automated build timeout !
 
 ## Notes
 
