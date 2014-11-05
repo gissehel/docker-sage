@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-sudo -u sage /home/sage/sage-6.3/sage "$@"
+exec sudo -u sage -H /home/sage/sage-6.3/sage "$@"
 
