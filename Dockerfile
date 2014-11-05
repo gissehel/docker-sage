@@ -15,5 +15,6 @@ run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/ap
  cd sage-6.3 && \
  sudo -u sage -H make && \
  sudo -u sage -H /home/sage/sage-6.3/sage -c 'quit()'
-entrypoint ["sudo", "-u", "sage", "-H", "/home/sage/sage-6.3/sage"]
+add sage.sh /home/sage/sage.sh 
+entrypoint "/home/sage/sage.sh"
 
