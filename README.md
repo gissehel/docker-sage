@@ -3,7 +3,7 @@
 Docker container for Sage (http://sagemath.org).
 
 
-The `Dockerfile` builds Sage 6.3 from source.
+The `Dockerfile` builds Sage 6.4.1 from source.
 
 **project page**: [https://github.com/gissehel/docker-sagemath](https://github.com/gissehel/docker-sagemath)
 
