@@ -11,6 +11,8 @@ The `Dockerfile` builds Sage 6.4.1 from source.
 
 **Note**: This build is not an automated build because sagemath takes too much time to compile, the automated build timeout !
 
+**Warning**: Sage *6.4.1* has a regression about command line arguments. If you're using "--notebook arg1 arg2 arg3", you **SHOULD** either use the form **name1=value1** for **arg1**, or the form **"'value1'"**. Just using **value1** or **"value1"** will result in an error due to a bug involving unitialized variable named **'value'**.
+
 ## Notes
 
 * You need a bit more RAM than the standard Docker Vagrantfile gives you.
@@ -39,7 +41,7 @@ It will look like:
 ```bash
 $ sudo docker run -ti -rm -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb gissehel/sagemath
 ┌────────────────────────────────────────────────────────────────────┐
-│ Sage Version 6.3, Release Date: 2014-08-10                         │
+│ Sage Version 6.4.1, Release Date: 2014-11-23                       │
 │ Type "notebook()" for the browser-based notebook interface.        │
 │ Type "help()" for help.                                            │
 └────────────────────────────────────────────────────────────────────┘
@@ -49,7 +51,7 @@ sage: notebook("/home/sage/notebook","8080","0.0.0.0")
 Then once your folder has been initialised, every other starts will look like :
 
 ```bash
-$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath -notebook /home/sage/notebook 8080 0.0.0.0
+$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath --notebook "'/home/sage/notebook'" "'8080'" "'0.0.0.0'"
 ```
 
 
