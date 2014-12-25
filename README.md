@@ -1,4 +1,4 @@
-# docker-sage
+# Docker-sage
 
 Docker container for Sage (http://sagemath.org).
 
@@ -51,10 +51,26 @@ sage: notebook("/home/sage/notebook","8080","0.0.0.0")
 Then once your folder has been initialised, every other starts will look like :
 
 ```bash
-$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath --notebook "'/home/sage/notebook'" "'8080'" "'0.0.0.0'"
+$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath --notebook=default "'/home/sage/notebook'" "'8080'" "'0.0.0.0'"
 ```
 
+## History
 
+As command line argument parsing has changed between version 6.3 and 6.4.1, here is how to run sagemath for different versions:
 
+### 6.4.1
 
+```bash
+$ sudo docker run -ti -rm -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb gissehel/sagemath:6.4.1
+[...]
+$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath:6.4.1 --notebook=default "'/home/sage/notebook'" "'8080'" "'0.0.0.0'"
+```
+
+### 6.3
+
+```bash
+$ sudo docker run -ti -rm -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb gissehel/sagemath:6.3
+[...]
+$ sudo docker run -d -v /opt/dockerstore/notebook:/home/sage/notebook.sagenb -p 127.0.0.1:8080:8080 --name=sage gissehel/sagemath:6.3 -notebook /home/sage/notebook 8080 0.0.0.0
+```
 
